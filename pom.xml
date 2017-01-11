@@ -12,6 +12,7 @@
         <module>java8concurrency</module>
         <module>java8utils</module>
         <module>java8stream</module>
+        <module>java8interface</module>
     </modules>
 
     <properties>

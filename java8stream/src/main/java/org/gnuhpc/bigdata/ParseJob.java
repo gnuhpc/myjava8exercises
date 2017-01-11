@@ -41,8 +41,10 @@ public class ParseJob {
 
         List<Map.Entry<Integer, String>> jobList = Stream.of(jobMap.entrySet(), jobMap2.entrySet()).flatMap(job -> job.stream()).collect(Collectors.toList());
         jobList.forEach(job-> System.out.println(job.getKey() + job.getValue()));
-        System.out.println("Max Id of jobs"+jobMap2.entrySet().stream().max(Comparator.comparing(job->job.getKey())).get().getValue());
-        System.out.println("Number of jobs"+Stream.of(jobMap.entrySet(),jobMap2.entrySet()));
+        System.out.println("Max Id of jobs:"+jobMap2.entrySet().stream().max(Comparator.comparing(job->job.getKey())).get().getValue());
+        System.out.println("Number of jobs:"+Stream.of(jobMap.entrySet(),jobMap2.entrySet()).flatMap(job->job.stream()).count());
+
+        System.out.println(jobMap.entrySet().stream().map(job->job.getKey()).reduce((job1,job2)->(job1+job2)).get());
 
     }
 }

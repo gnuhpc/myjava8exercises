@@ -40,12 +40,8 @@ public class OptionalAddress {
 
     public static void main(String[] args) {
         Optional<OptionalAddress> address = OptionalAddress.findAddress("abcd");
-        address.ifPresent(add-> {
-            System.out.println(add.getAddressLine());
-        });
+        address.ifPresent(add-> System.out.println(add.getAddressLine()));
         address = OptionalAddress.findAddress("a");
-        address.ifPresent(add-> {
-            System.out.println(add.getAddressLine());
-        });
+        address.ifPresent(add-> System.out.println(add.getAddressLine()));
     }
 }
